@@ -1,0 +1,22 @@
+--[[
+	This is an my material file
+]]
+
+return
+{
+	-- This table contains a hypothetical list of shader paths
+	-- (using an array)
+	constants =
+	{
+		g_colorModifier = { 1.0, 1.0, 1.0,},
+	},
+	shaders =
+	{
+		"data/vertexShader.hlsl",
+		"data/fragmentShader.hlsl",
+	},
+	textures =
+	{
+		"data/redMaterial.png",
+	},
+}

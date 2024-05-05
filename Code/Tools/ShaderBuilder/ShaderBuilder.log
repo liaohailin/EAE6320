@@ -1,0 +1,8 @@
+﻿Build started 10/17/2014 12:45:32 PM.
+     1>Project "C:\Users\Hailin Liao\Documents\GameEngineeringII\Assignment_06\EAE6320\Code\Tools\ShaderBuilder\ShaderBuilder.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\12.0\bin\Microsoft.Common.CurrentVersion.targets(615,5): error : The OutputPath property is not set for project 'ShaderBuilder.vcxproj'.  Please check to make sure that you have specified a valid combination of Configuration and Platform for this project.  Configuration='Debug'  Platform='Win32'.  This error may also appear if some other project is trying to follow a project-to-project reference to this project, this project has been unloaded or is not included in the solution, and the referencing project does not build using the same or an equivalent Configuration or Platform.
+     1>Done Building Project "C:\Users\Hailin Liao\Documents\GameEngineeringII\Assignment_06\EAE6320\Code\Tools\ShaderBuilder\ShaderBuilder.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.00
