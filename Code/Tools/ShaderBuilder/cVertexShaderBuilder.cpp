@@ -22,7 +22,7 @@ namespace
 	};
 }
 
-bool eae6320::cVertexShaderBuilder::Build(const std::vector<const std::string>& i_arguments)
+bool eae6320::cVertexShaderBuilder::Build(const std::vector<std::string>& i_arguments)
 {
 	// Get which shader program type to compile
 	eShaderProgramType shaderProgramType = UNKNOWN;

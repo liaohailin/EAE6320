@@ -2527,13 +2527,22 @@ namespace
 		}
 
 		//network test
-
-		char str[512];
 		peer = RakNet::RakPeerInterface::GetInstance();
 
 		printf("(C) or (S)erver?\n");
-		gets(str);
-		if ((str[0] == 'c') || (str[0] == 'C'))
+		char str[512];
+		if (fgets(str, sizeof(str), stdin) != NULL)
+		{
+			// Remove trailing newline if present
+			size_t len = strlen(str);
+			if (len > 0 && str[len - 1] == '\n')
+			{
+				str[len - 1] = '\0';
+			}
+		}
+		std::string choice;
+		std::getline(std::cin, choice);
+		if (!choice.empty() && (choice[0] == 'c' || choice[0] == 'C'))
 		{
 			RakNet::SocketDescriptor sd;
 			peer->Startup(1, &sd, 1);
@@ -2554,12 +2563,13 @@ namespace
 		}
 		else {
 			printf("Enter server IP or hit enter for 127.0.0.1\n");
-			gets(str);
-			if (str[0] == 0){
-				strcpy(str, "127.0.0.1");
+			std::string serverAddr;
+			std::getline(std::cin, serverAddr);
+			if (serverAddr.empty()){
+				serverAddr = "127.0.0.1";
 			}
 			printf("Starting the client.\n");
-			peer->Connect(str, SERVER_PORT, 0, 0);
+			peer->Connect(serverAddr.c_str(), SERVER_PORT, 0, 0);
 
 		}
 
@@ -3027,7 +3037,9 @@ namespace
 	void CameraMoveForward(float i_moveAmount)
 	{
 		D3DXMATRIX cameraRot;
-		D3DXMatrixInverse(&cameraRot, NULL, GetArcBall()->GetRotationMatrix());
+		auto* ab = GetArcBall();
+		if (!ab) { /* log, skip movement */ return; }
+		D3DXMatrixInverse(&cameraRot, NULL, ab->GetRotationMatrix());
 
 		D3DXVECTOR3 vWorldAhead;
 		D3DXVECTOR3 vLocalAhead = D3DXVECTOR3(0, 0, 1);
@@ -3042,7 +3054,9 @@ namespace
 	void CameraMoveUpward(float i_moveAmount)
 	{
 		D3DXMATRIX cameraRot;
-		D3DXMatrixInverse(&cameraRot, NULL, GetArcBall()->GetRotationMatrix());
+		auto* ab = GetArcBall();
+		if (!ab) { /* log, skip movement */ return; }
+		D3DXMatrixInverse(&cameraRot, NULL, ab->GetRotationMatrix());
 
 		D3DXVECTOR3 vWorldUp;
 		D3DXVECTOR3 vLocalUp = D3DXVECTOR3(0, 1, 0);
@@ -3053,7 +3067,9 @@ namespace
 	void CameraMoveLeft(float i_moveAmount)
 	{
 		D3DXMATRIX cameraRot;
-		D3DXMatrixInverse(&cameraRot, NULL, GetArcBall()->GetRotationMatrix());
+		auto* ab = GetArcBall();
+		if (!ab) { /* log, skip movement */ return; }
+		D3DXMatrixInverse(&cameraRot, NULL, ab->GetRotationMatrix());
 
 		D3DXVECTOR3 vWorldUp;
 		D3DXVECTOR3 vLocalUp = D3DXVECTOR3(0, 1, 0);

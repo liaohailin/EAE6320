@@ -50,7 +50,7 @@ namespace eae6320
 		bool ParseCommandArgumentsAndBuild( char** i_arguments, const unsigned int i_argumentCount );
 		// And that function will extract the source and target paths
 		// and then call this function in the derived class with any remaining (optional) arguments:
-		virtual bool Build( const std::vector<const std::string>& i_optionalArguments ) = 0;
+		virtual bool Build(const std::vector<std::string>& i_optionalArguments ) = 0;
 
 		// Initialization / Shut Down
 		//---------------------------

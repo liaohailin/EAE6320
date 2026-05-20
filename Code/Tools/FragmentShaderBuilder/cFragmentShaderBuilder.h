@@ -21,7 +21,7 @@ namespace eae6320
 		// Build
 		//------
 
-		virtual bool Build(const std::vector<const std::string>&);
+		virtual bool Build(const std::vector<std::string>&);
 	};
 }
 #endif
