@@ -21,7 +21,7 @@ bool eae6320::cbBuilder::ParseCommandArgumentsAndBuild( char** i_arguments, cons
 		m_path_source = i_arguments[commandCount + 0];
 		m_path_target = i_arguments[commandCount+ 1];
 
-		std::vector<const std::string> optionalArguments;
+		std::vector<std::string> optionalArguments;
 		for ( unsigned int i = ( commandCount + requiredArgumentCount ); i < i_argumentCount; ++i )
 		{
 			optionalArguments.push_back( i_arguments[i] );

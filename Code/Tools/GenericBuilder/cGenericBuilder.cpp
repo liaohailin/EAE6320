@@ -12,7 +12,7 @@
 // Build
 //------
 
-bool eae6320::cGenericBuilder::Build( const std::vector<const std::string>& )
+bool eae6320::cGenericBuilder::Build( const std::vector<std::string>& )
 {
 	bool wereThereErrors = false;
 

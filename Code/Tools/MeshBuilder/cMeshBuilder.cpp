@@ -12,7 +12,7 @@
 // Build
 //------
 
-bool eae6320::cMeshBuilder::Build(const std::vector<const std::string>& i_arguments)
+bool eae6320::cMeshBuilder::Build(const std::vector<std::string>& i_arguments)
 {
 	bool wereThereErrors = false;
 	//build the mesh file into binary file

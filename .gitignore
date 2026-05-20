@@ -16,6 +16,7 @@
 *.suo
 # User settings for a project
 *.vcxproj.user
+.vs
 
 # Intellisense
 *.sdf
